@@ -9,7 +9,7 @@
   --cool-gray: #9CA3AF;         /* Inactive/Divider - Disabled buttons, Placeholder text, Borders */
 }
 
-/* Base Styles */
+/* Base Styles - FixIt Color Implementation */
 * {
   margin: 0;
   padding: 0;
@@ -22,29 +22,108 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bone-white);
+  background-color: var(--bone-white);  /* Main Background */
   color: #333;
 }
 
-/* Custom Tailwind Extensions */
-.bg-steel-blue { background-color: var(--steel-blue); }
-.bg-warm-gray { background-color: var(--warm-gray); }
-.bg-forest-green { background-color: var(--forest-green); }
-.bg-bone-white { background-color: var(--bone-white); }
-.bg-soft-brick-red { background-color: var(--soft-brick-red); }
-.bg-cool-gray { background-color: var(--cool-gray); }
+/* Color Usage Implementation per Guidelines */
 
+/* 1. Steel Blue (#3B4D61) – Main Color Usage */
+.bg-steel-blue { background-color: var(--steel-blue); }
 .text-steel-blue { color: var(--steel-blue); }
+.border-steel-blue { border-color: var(--steel-blue); }
+
+/* Headers (Top bars) */
+nav, .header, .top-bar { background-color: var(--steel-blue); }
+
+/* Main buttons like "Book Now" */
+.btn-primary, .book-now-btn, .main-button {
+  background-color: var(--steel-blue);
+  color: white;
+}
+
+/* Important titles */
+h1, h2.important, .title-important { color: var(--steel-blue); }
+
+/* 2. Warm Gray (#E0E0E0) – Neutral Support Usage */
+.bg-warm-gray { background-color: var(--warm-gray); }
 .text-warm-gray { color: var(--warm-gray); }
+
+/* Card backgrounds */
+.card, .service-card, .provider-card { background-color: var(--warm-gray); }
+
+/* Input fields */
+input, textarea, select {
+  background-color: var(--warm-gray);
+  border: 1px solid var(--cool-gray);
+}
+
+/* Boxes/sections inside pages */
+.section-box, .content-box { background-color: var(--warm-gray); }
+
+/* 3. Forest Green (#2C6E49) – Positive Accent Usage */
+.bg-forest-green { background-color: var(--forest-green); }
 .text-forest-green { color: var(--forest-green); }
-.text-bone-white { color: var(--bone-white); }
+
+/* Success messages */
+.success-message, .booking-confirmed { 
+  background-color: var(--forest-green); 
+  color: white; 
+}
+
+/* Completed icons/checkmarks */
+.check-icon, .completed-icon { color: var(--forest-green); }
+
+/* Active toggle switches */
+.toggle-active, .switch-on { background-color: var(--forest-green); }
+
+/* Ratings/trust indicators */
+.rating, .trust-indicator { color: var(--forest-green); }
+
+/* 4. Bone White (#F5F5F5) – Main Background Usage */
+.bg-bone-white { background-color: var(--bone-white); }
+
+/* Entire app background */
+.App, .app-container { background-color: var(--bone-white); }
+
+/* All pages backgrounds */
+.page, .dashboard, .home-page { background-color: var(--bone-white); }
+
+/* 5. Soft Brick Red (#C62828) – Error Usage */
+.bg-soft-brick-red { background-color: var(--soft-brick-red); }
 .text-soft-brick-red { color: var(--soft-brick-red); }
+
+/* Error messages */
+.error-message, .error-text { color: var(--soft-brick-red); }
+
+/* Warning text */
+.warning, .warning-text { color: var(--soft-brick-red); }
+
+/* Cancel buttons */
+.btn-cancel, .cancel-button { 
+  background-color: var(--soft-brick-red); 
+  color: white; 
+}
+
+/* 6. Cool Gray (#9CA3AF) – Inactive/Divider Usage */
+.bg-cool-gray { background-color: var(--cool-gray); }
 .text-cool-gray { color: var(--cool-gray); }
 
-.border-steel-blue { border-color: var(--steel-blue); }
-.border-warm-gray { border-color: var(--warm-gray); }
-.border-forest-green { border-color: var(--forest-green); }
-.border-soft-brick-red { border-color: var(--soft-brick-red); }
+/* Disabled buttons/icons */
+.disabled, .btn-disabled { 
+  background-color: var(--cool-gray); 
+  color: white; 
+}
+
+/* Placeholder text */
+::placeholder { color: var(--cool-gray); }
+.placeholder-text { color: var(--cool-gray); }
+
+/* Borders between sections */
+.divider, .section-border { border-color: var(--cool-gray); }
+
+/* Time stamps */
+.timestamp, .time-display { color: var(--cool-gray); }
 
 /* Component Specific Styles */
 .App {
