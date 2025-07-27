@@ -295,21 +295,21 @@ const RoleSelection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-bone-white flex items-center justify-center">
-      <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
+    <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--bone-white)' }}>
+      <div className="max-w-md w-full rounded-lg shadow-md p-8" style={{ backgroundColor: 'white' }}>
         <h2 className="text-2xl font-bold text-steel-blue text-center mb-6">Complete Your Profile</h2>
         <p className="text-gray-600 text-center mb-8">Welcome {user?.name}! Please select your role to continue.</p>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-3">I am a:</label>
+            <label className="block text-sm font-medium text-steel-blue mb-3">I am a:</label>
             <div className="space-y-3">
               {[
                 { value: 'customer', label: 'Customer', desc: 'Looking for services' },
                 { value: 'freelance_fixer', label: 'Freelance Fixer', desc: 'Independent service provider' },
                 { value: 'company', label: 'Company Owner', desc: 'Managing a service company' }
               ].map((role) => (
-                <div key={role.value} className="flex items-center p-3 border rounded-lg hover:bg-gray-50">
+                <div key={role.value} className="flex items-center p-3 border rounded-lg hover:bg-gray-50" style={{ borderColor: 'var(--cool-gray)' }}>
                   <input
                     type="radio"
                     id={role.value}
@@ -317,11 +317,12 @@ const RoleSelection = () => {
                     value={role.value}
                     checked={selectedRole === role.value}
                     onChange={(e) => setSelectedRole(e.target.value)}
-                    className="h-4 w-4 text-forest-green"
+                    className="h-4 w-4"
+                    style={{ accentColor: 'var(--forest-green)' }}
                   />
                   <label htmlFor={role.value} className="ml-3 flex-1">
                     <div className="font-medium text-gray-900">{role.label}</div>
-                    <div className="text-sm text-gray-500">{role.desc}</div>
+                    <div className="text-sm" style={{ color: 'var(--cool-gray)' }}>{role.desc}</div>
                   </label>
                 </div>
               ))}
@@ -329,7 +330,7 @@ const RoleSelection = () => {
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="phone" className="block text-sm font-medium text-steel-blue mb-1">
               Phone Number
             </label>
             <input
@@ -337,13 +338,18 @@ const RoleSelection = () => {
               id="phone"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-green"
+              className="w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2"
+              style={{ 
+                backgroundColor: 'var(--warm-gray)', 
+                border: '1px solid var(--cool-gray)',
+                focusRingColor: 'var(--forest-green)'
+              }}
               placeholder="+961 XX XXX XXX"
             />
           </div>
 
           <div>
-            <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="address" className="block text-sm font-medium text-steel-blue mb-1">
               Address
             </label>
             <textarea
@@ -351,7 +357,12 @@ const RoleSelection = () => {
               value={formData.address}
               onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               rows="3"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-forest-green"
+              className="w-full px-3 py-2 rounded-md focus:outline-none focus:ring-2"
+              style={{ 
+                backgroundColor: 'var(--warm-gray)', 
+                border: '1px solid var(--cool-gray)',
+                focusRingColor: 'var(--forest-green)'
+              }}
               placeholder="Your address in Lebanon"
             />
           </div>
@@ -359,11 +370,14 @@ const RoleSelection = () => {
           <button
             type="submit"
             disabled={!selectedRole || loading}
-            className={`w-full py-2 px-4 rounded-md font-medium ${
+            className={`w-full py-2 px-4 rounded-md font-medium transition-colors ${
               selectedRole && !loading
-                ? 'bg-forest-green hover:bg-green-700 text-white'
-                : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                ? 'text-white'
+                : 'text-white cursor-not-allowed'
             }`}
+            style={{
+              backgroundColor: selectedRole && !loading ? 'var(--steel-blue)' : 'var(--cool-gray)'
+            }}
           >
             {loading ? 'Creating Profile...' : 'Complete Profile'}
           </button>
