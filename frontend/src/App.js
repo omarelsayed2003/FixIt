@@ -213,8 +213,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* How It Works */}
-      <div className="py-16">
+      {/* How It Works - Bone White background */}
+      <div className="py-16" style={{ backgroundColor: 'var(--bone-white)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-steel-blue mb-4">How It Works</h2>
@@ -251,7 +251,7 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
+      {/* Call to Action - Forest Green */}
       <div className="bg-forest-green text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
