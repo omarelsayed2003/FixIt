@@ -1,12 +1,12 @@
-/* Lebanese Color Scheme - LebFix Service Marketplace */
+/* FixIt Lebanese Service Marketplace - Exact Color Specifications */
 :root {
-  /* Main Colors */
-  --steel-blue: #3B4D61;
-  --warm-gray: #E0E0E0;
-  --forest-green: #2C6E49;
-  --bone-white: #F5F5F5;
-  --soft-brick-red: #C62828;
-  --cool-gray: #9CA3AF;
+  /* Exact Color Specifications as Provided */
+  --steel-blue: #3B4D61;        /* Main Color - Headers, Buttons, Important titles */
+  --warm-gray: #E0E0E0;         /* Neutral Support - Card backgrounds, Input fields, Boxes */
+  --forest-green: #2C6E49;      /* Positive Accent - Success messages, Checkmarks, Active toggles */
+  --bone-white: #F5F5F5;        /* Main Background - App background, All pages */
+  --soft-brick-red: #C62828;    /* Errors - Error messages, Warning text, Cancel buttons */
+  --cool-gray: #9CA3AF;         /* Inactive/Divider - Disabled buttons, Placeholder text, Borders */
 }
 
 /* Base Styles */
