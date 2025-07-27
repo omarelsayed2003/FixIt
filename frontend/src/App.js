@@ -133,7 +133,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-bone-white">
-      {/* Header */}
+      {/* Header - Steel Blue */}
       <nav className="bg-steel-blue shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
@@ -152,7 +152,7 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Steel Blue gradient */}
       <div className="bg-gradient-to-r from-steel-blue to-blue-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
@@ -172,8 +172,8 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Services Section */}
-      <div className="py-16 bg-warm-gray">
+      {/* Services Section - Warm Gray cards on Bone White background */}
+      <div className="py-16" style={{ backgroundColor: 'var(--bone-white)' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-steel-blue mb-4">Our Services</h2>
@@ -203,7 +203,7 @@ const LandingPage = () => {
                 description: "Plumbing repairs, installations, and emergencies"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow">
+              <div key={index} className="rounded-lg shadow-md p-6 text-center hover:shadow-lg transition-shadow" style={{ backgroundColor: 'var(--warm-gray)' }}>
                 <div className="text-4xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-semibold text-steel-blue mb-2">{service.title}</h3>
                 <p className="text-gray-600">{service.description}</p>
