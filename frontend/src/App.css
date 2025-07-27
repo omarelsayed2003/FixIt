@@ -1,38 +1,321 @@
+/* Lebanese Color Scheme - LebFix Service Marketplace */
+:root {
+  /* Main Colors */
+  --steel-blue: #3B4D61;
+  --warm-gray: #E0E0E0;
+  --forest-green: #2C6E49;
+  --bone-white: #F5F5F5;
+  --soft-brick-red: #C62828;
+  --cool-gray: #9CA3AF;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bone-white);
+  color: #333;
+}
+
+/* Custom Tailwind Extensions */
+.bg-steel-blue { background-color: var(--steel-blue); }
+.bg-warm-gray { background-color: var(--warm-gray); }
+.bg-forest-green { background-color: var(--forest-green); }
+.bg-bone-white { background-color: var(--bone-white); }
+.bg-soft-brick-red { background-color: var(--soft-brick-red); }
+.bg-cool-gray { background-color: var(--cool-gray); }
+
+.text-steel-blue { color: var(--steel-blue); }
+.text-warm-gray { color: var(--warm-gray); }
+.text-forest-green { color: var(--forest-green); }
+.text-bone-white { color: var(--bone-white); }
+.text-soft-brick-red { color: var(--soft-brick-red); }
+.text-cool-gray { color: var(--cool-gray); }
+
+.border-steel-blue { border-color: var(--steel-blue); }
+.border-warm-gray { border-color: var(--warm-gray); }
+.border-forest-green { border-color: var(--forest-green); }
+.border-soft-brick-red { border-color: var(--soft-brick-red); }
+
+/* Component Specific Styles */
 .App {
-    text-align: center;
+  min-height: 100vh;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Button Hover Effects */
+.hover\:bg-steel-blue:hover { background-color: #2A3B4D; }
+.hover\:bg-forest-green:hover { background-color: #1E5233; }
+.hover\:bg-soft-brick-red:hover { background-color: #B71C1C; }
+
+/* Focus States */
+.focus\:ring-forest-green:focus {
+  --tw-ring-color: var(--forest-green);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.focus\:border-forest-green:focus {
+  border-color: var(--forest-green);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Card Components */
+.service-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid var(--warm-gray);
 }
 
-.App-link {
-    color: #61dafb;
+.service-card:hover {
+  box-shadow: 0 4px 16px rgba(59, 77, 97, 0.15);
+  transform: translateY(-2px);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Provider Cards */
+.provider-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--warm-gray);
+  transition: all 0.3s ease;
+}
+
+.provider-card:hover {
+  box-shadow: 0 8px 24px rgba(59, 77, 97, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Rating Stars */
+.rating-stars {
+  color: #FFC107;
+}
+
+/* Status Badges */
+.status-pending {
+  background-color: #FFF3CD;
+  color: #856404;
+  border: 1px solid #FFEAA7;
+}
+
+.status-confirmed {
+  background-color: var(--forest-green);
+  color: white;
+}
+
+.status-completed {
+  background-color: #D4F6E4;
+  color: #0F5132;
+  border: 1px solid #A3E4B8;
+}
+
+.status-cancelled {
+  background-color: #F8D7DA;
+  color: #721C24;
+  border: 1px solid #F1AEB5;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+textarea,
+select {
+  border: 1px solid var(--cool-gray);
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--forest-green);
+  box-shadow: 0 0 0 3px rgba(44, 110, 73, 0.1);
+}
+
+/* Loading Spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .provider-card {
+    padding: 16px;
+  }
+  
+  .service-card {
+    margin-bottom: 12px;
+  }
+}
+
+/* Navigation */
+nav {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--steel-blue) 0%, #2563EB 100%);
+}
+
+/* Service Category Icons */
+.service-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Emergency Badge */
+.emergency-badge {
+  background: linear-gradient(45deg, var(--soft-brick-red), #DC2626);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Company Badge */
+.company-badge {
+  background: var(--steel-blue);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+/* Freelancer Badge */
+.freelancer-badge {
+  background: var(--forest-green);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cool-gray);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--steel-blue);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Success and Error Messages */
+.success-message {
+  background-color: #D4F6E4;
+  color: #0F5132;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--forest-green);
+}
+
+.error-message {
+  background-color: #F8D7DA;
+  color: #721C24;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--soft-brick-red);
+}
+
+/* Professional Lebanese Styling */
+.lebanese-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(59, 77, 97, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(44, 110, 73, 0.05) 0%, transparent 50%);
+}
+
+/* Footer */
+.footer {
+  background: var(--steel-blue);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+/* Utility Classes */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.box-shadow-soft {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    color: black;
+    background: white;
+  }
 }
